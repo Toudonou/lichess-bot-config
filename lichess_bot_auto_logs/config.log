@@ -1,0 +1,136 @@
+Config:
+token: logger
+url: https://lichess.org/
+engine:
+  dir: ./engines/
+  name: zeno
+  protocol: uci
+  interpreter: null
+  interpreter_options: []
+  working_dir: /run/media/toudonou/Oswald/Dev/lichess-bot
+  silence_stderr: false
+  draw_or_resign:
+    offer_draw_enabled: false
+    offer_draw_for_egtb_zero: true
+    resign_enabled: false
+    resign_for_egtb_minus_two: true
+    resign_moves: 3
+    resign_score: -1000
+    offer_draw_moves: 5
+    offer_draw_score: 0
+    offer_draw_pieces: 10
+  online_moves:
+    max_out_of_book_moves: 10
+    max_retries: 2
+    max_depth: .inf
+    online_egtb:
+      enabled: false
+      source: lichess
+      min_time: 20
+      max_time: 10800
+      max_pieces: 7
+      move_quality: best
+    chessdb_book:
+      enabled: false
+      min_time: 20
+      max_time: 10800
+      move_quality: good
+      min_depth: 20
+    lichess_cloud_analysis:
+      enabled: false
+      min_time: 20
+      max_time: 10800
+      move_quality: best
+      min_depth: 20
+      min_knodes: 0
+      max_score_difference: 50
+    lichess_opening_explorer:
+      enabled: false
+      min_time: 20
+      max_time: 10800
+      source: masters
+      player_name: ''
+      sort: winrate
+      min_games: 10
+  lichess_bot_tbs:
+    syzygy:
+      enabled: false
+      max_pieces: 7
+      move_quality: best
+    gaviota:
+      enabled: false
+      max_pieces: 5
+      move_quality: best
+      min_dtm_to_consider_as_wdl_1: 120
+  polyglot:
+    enabled: false
+    max_depth: 8
+    selection: weighted_random
+    min_weight: 1
+    normalization: none
+  ponder: false
+  uci_ponder: false
+abort_time: 30
+move_overhead: 2000
+fake_think_time: false
+rate_limiting_delay: 0
+challenge:
+  concurrency: 1
+  accept_bot: true
+  only_bot: false
+  max_increment: 2
+  min_increment: 2
+  max_base: 180
+  min_base: 180
+  max_days: 0
+  min_days: 0
+  variants:
+  - standard
+  time_controls:
+  - blitz
+  modes:
+  - rated
+  bullet_requires_increment: false
+  sort_by: best
+  preference: none
+  block_list: []
+  online_block_list: []
+  allow_list: []
+  max_simultaneous_games_per_user: 5
+matchmaking:
+  challenge_timeout: 3
+  allow_matchmaking: true
+  allow_during_games: false
+  challenge_variant: standard
+  challenge_initial_time:
+  - 180
+  challenge_increment:
+  - 2
+  opponent_rating_difference: 100
+  rating_preference: none
+  challenge_mode: rated
+  challenge_filter: none
+  block_list: []
+  online_block_list: []
+  include_challenge_block_list: false
+  challenge_days:
+  - null
+  opponent_min_rating: 600
+  opponent_max_rating: 4000
+  overrides: {}
+quit_after_all_games_finish: false
+pgn_directory: null
+pgn_file_grouping: game
+max_takebacks_accepted: 0
+correspondence:
+  checkin_period: 600
+  move_time: 60
+  disconnect_time: 300
+  ponder: false
+  uci_ponder: false
+greeting:
+  hello: ''
+  hello_spectators: ''
+  goodbye: ''
+  goodbye_spectators: ''
+====================
